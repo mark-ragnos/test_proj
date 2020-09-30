@@ -17,10 +17,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        int[] price = {100, 200, 50, 33, 89, 112, 526, 923, 123, 547, 98, 1235, 9384, 213, 464, 146};
+        int[] price = {100, 200, 50, 33, 89, 112, 526, 923, 123, 547, 98, 1235, 9384, 213, 464}; //length = 15
         int discount = 35;
-        int offset = 4;
-        int readLength = 4;
+        int offset = 1;
+        int readLength = 14;
 
         Log.d(TITLE, "Result:");
 
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(price == null)
             throw new NullPointerException();
-        if(offset + readLength > price.length - 1 || offset < 0 || readLength < 1)
+        if(offset + readLength > price.length || offset < 0 || readLength < 1)
             throw new IncorrectRangeException();
         if(discount < 1 || discount > 99)
             throw new IncorrectPercentException();
